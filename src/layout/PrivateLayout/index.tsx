@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { ToastContainer } from "react-toastify";
 import Navigation from "./Navigation";
-import Header from "./Header";
 import { AuthContext } from "../../context";
+import Header from "./Header";
 
 interface PrivateLayoutProps {
   children: React.ReactNode;

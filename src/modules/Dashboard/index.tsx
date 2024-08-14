@@ -1,7 +1,18 @@
 // import React from "react";
 
+import PrivateLayout from "../../layout/PrivateLayout";
+
 const Dashboard = () => {
-  return <div>This is the dashboard page</div>;
+  return (
+    <PrivateLayout
+      pageTitle="Dashboard"
+      name="Overview"
+      role="user"
+      pageName="overview"
+    >
+      <div>This is the Dashboard</div>
+    </PrivateLayout>
+  );
 };
 
 export default Dashboard;

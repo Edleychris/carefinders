@@ -60,12 +60,6 @@ const Navigation: React.FC<NavigationProps> = ({
         {isDropdownOpen && (
           <div className={styles.dropdown}>
             <ul>
-              <li className={styles.business}>
-                <span>
-                  New Business
-                  <AiOutlinePlus style={{ color: "#850075" }} />
-                </span>
-              </li>
               <li>Settings</li>
               <li>
                 <span onClick={logout} className={styles.logout}>

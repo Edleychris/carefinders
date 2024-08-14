@@ -32,15 +32,6 @@ const UserLinks: React.FC<UserLinksProps> = ({ name, roles = "user" }) => {
 
   return (
     <div className={styles.links}>
-      <div className={styles.search}>
-        <AiOutlineSearch style={{ color: "#808080" }} />
-        <input
-          type="text"
-          placeholder="Search"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-      </div>
       <ul>
         {userLinks.map((item: any, i: any) => {
           // console.log("Rendering link:", item.name, "Allowed:", item.allowed);
