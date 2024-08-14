@@ -1,7 +1,7 @@
 import React, { Fragment, Suspense } from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { Loader } from "../components";
-// import AuthGuard from "./AuthGuard";
+import AuthGuard from "./AuthGuard";
 import BaseRoutes from "./base";
 
 interface RouteConfig {
@@ -19,14 +19,13 @@ const renderRoute = ({ component: Component, ...route }: RouteConfig) => {
       element={
         <Fragment>
           <Suspense fallback={<Loader />}>
-            {/* {useAuth ? (
+            {useAuth ? (
               <AuthGuard>
                 <Component />
               </AuthGuard>
             ) : (
               <Component />
-            )} */}
-            <Component />
+            )}
           </Suspense>
         </Fragment>
       }
@@ -37,7 +36,7 @@ const renderRoute = ({ component: Component, ...route }: RouteConfig) => {
 const RoutesWrapper = () => {
   return (
     <BrowserRouter>
-      {/* <Routes>{BaseRoutes.map((route) => renderRoute(route))}</Routes> */}
+      <Routes>{BaseRoutes.map((route) => renderRoute(route))}</Routes>
     </BrowserRouter>
   );
 };

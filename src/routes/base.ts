@@ -12,7 +12,7 @@ const BaseRoutes = [
     path: `${BasePaths.MAIN}/*`,
     exact: true,
     component: lazy(() => import("./UserRouter")),
-    useAuth: true,
+    useAuth: false,
   },
   {
     path: "*",

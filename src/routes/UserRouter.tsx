@@ -1,12 +1,12 @@
 import { Fragment, lazy, useContext } from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
-import { PrivatePaths, PublicPaths } from "./path";
+import { Route, Routes } from "react-router-dom";
+// import { PrivatePaths, PublicPaths } from "./path";
 import { AuthContext } from "../context";
 
 const privateRoutes = [
   /* Add paths for authorized users */
   {
-    path: "dashboard",
+    path: "/dashboard",
     element: lazy(() => import("../modules/Dashboard")),
   },
   {

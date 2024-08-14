@@ -1,16 +1,16 @@
-import { BiHomeAlt } from "react-icons/bi";
-import { FaUserCircle, FaUsers } from "react-icons/fa";
+// import { BiHomeAlt } from "react-icons/bi";
+// import { FaUserCircle, FaUsers } from "react-icons/fa";
 import { PrivatePaths } from "../../../routes/path";
 import start from '../../../assets/Menu/Start_icon.png';
 import overview from '../../../assets/Menu/overview.png';
 import app from '../../../assets/Menu/App.png';
 import customer from '../../../assets/Menu/customers_icon.png';
-import finance from '../../../assets/Menu/FiinData.png';
-import account from '../../../assets/Menu/accounts.png';
-import transactions from '../../../assets/Menu/transactions.png';
+// import finance from '../../../assets/Menu/FiinData.png';
+// import account from '../../../assets/Menu/accounts.png';
+// import transactions from '../../../assets/Menu/transactions.png';
 // import Income from "../../../modules/FinancialData/Income";
-import statement from '../../../assets/Menu/statement.png';
-import more from '../../../assets/Menu/more.png';
+// import statement from '../../../assets/Menu/statement.png';
+// import more from '../../../assets/Menu/more.png';
 
 export const userLinks = [
   {
