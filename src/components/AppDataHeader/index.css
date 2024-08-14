@@ -1,0 +1,272 @@
+.Appheader {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: rgba(249, 249, 249, 1);
+    background-image: url("../../assets/bg/transact.png");
+    background-size: cover;
+    background-position: right 20px top 7rem;
+    background-repeat: no-repeat;
+    height: 13rem;
+  }
+  
+  .Appheader h2 {
+    font-size: 18px;
+    margin-top: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .Appheader p {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  
+  .Appheader a {
+    color: #e91e63;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .AppheaderLinks {
+    color: rgba(133, 0, 117, 1);
+    text-decoration: none;
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+  
+  .AppfiltersContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .Appfilters {
+    display: flex;
+  }
+  
+  .AppfilterButton {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+  
+  .AppsearchbarContain {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    width: 100%;
+  }
+  
+  .AppsearchBar {
+    width: 80%;
+    padding: 0.5rem 2rem;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  .AppsearchBar::placeholder {
+    color: #aaa;
+  }
+  
+  .AppsearchIcon {
+    position: absolute;
+    left: 20px;
+    color: #aaa;
+  }
+  
+  .AppsearchbarContain::before {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+  }
+  
+  .Appicon {
+    margin-left: 0.5rem;
+  }
+  
+  .AppavatarContainer {
+    display: inline-flex;
+    align-items: center;
+    border-left: 2px solid #ddd;
+    padding-left: 10px;
+    margin-left: 10px;
+  }
+  
+  .AppuserAvatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .AppavatarImage {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: block;
+  }
+  
+  .AppavatarInitial {
+    display: block;
+    margin-left: 5px;
+  }
+  
+  .AppdropdownIcon {
+    margin-left: 4px;
+  }
+  
+  .AppsearchInput {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 200px;
+  }
+  
+  @media screen and (min-width: 1600px) {
+  }
+  
+  @media screen and (min-width: 1300px) and (max-width: 1599px) {
+    .Appheader {
+      background-size: 35%;
+    }
+    .Appheader h2 {
+      font-size: 22px;
+    }
+  }
+  
+  @media screen and (min-width: 1050px) and (max-width: 1299px) {
+    .Appheader {
+      background-size: 30%;
+      height: 15rem;
+    }
+    .Appheader h2 {
+      font-size: 20px;
+    }
+  }
+  
+  @media screen and (min-width: 700px) and (max-width: 1049px) {
+    .Appheader {
+      background-size: 25%;
+      height: 12rem;
+    }
+    .Appheader h2 {
+      font-size: 18px;
+    }
+    .AppfiltersContainer {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .AppfilterButton,
+    .AppsearchBar {
+      width: 40%;
+    }
+  
+    .AppsearchIcon {
+      position: absolute;
+      left: 20px;
+      bottom: 8px;
+      color: #aaa;
+    }
+  
+    .AppsearchbarContain {
+      width: 60%;
+      margin-top: 10px;
+      margin-left: -10px;
+    }
+  }
+  
+  @media screen and (max-width: 699px) {
+    .Appheader {
+      background-size: 20%;
+      height: 10rem;
+    }
+    .Appheader h2 {
+      font-size: 16px;
+    }
+    .AppfiltersContainer {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .AppfilterButton,
+    .AppsearchBar {
+      width: 30%;
+    }
+  
+    .AppsearchBar {
+      margin-top: 10px;
+      margin-left: -1.1rem;
+      width: 70%;
+    }
+    .AppsearchIcon {
+      margin-left: -10px;
+      margin-top: 10px;
+    }
+  }
+  
+  @media screen and (max-width: 549px) {
+    .Appheader {
+      padding: 15px;
+      background-size: 18%;
+      margin-bottom: 5rem;
+      height: 9rem;
+      background-position: right 20px top 7rem;
+    }
+    .Appheader h2,
+    .Appheader p {
+      font-size: 12px;
+    }
+    .AppheaderLinks,
+    .AppfilterButton,
+    .AppsearchBar {
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+  
+    .AppfiltersContainer {
+      display: flex;
+      flex-direction: column;
+      margin: 10px 20px;
+    }
+  
+    .Appfilters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  
+    .AppfilterButton {
+      width: calc(45% - 1px);
+      margin-bottom: 10px;
+    }
+  
+    .AppsearchbarContain {
+      padding-left: 1rem;
+      width: 65%;
+    }
+  
+    .AppsearchIcon {
+      left: 20px;
+      top: 10px;
+    }
+  }
+  

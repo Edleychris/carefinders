@@ -1,0 +1,72 @@
+.main {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: white;
+    padding: 24px 6px;
+  }
+  
+  .textCenter {
+    text-align: center;
+  }
+  
+  .icon {
+    font-size: 48px;
+    color: #08c;
+  }
+  
+  .heading {
+    margin-top: 16px;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.25;
+    color: #1f2937;
+  }
+  
+  .headingSm {
+    font-size: 3rem;
+  }
+  
+  .paragraph {
+    margin-top: 24px;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #4b5563;
+  }
+  
+  .buttonContainer {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+  }
+  
+  .primaryButton {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #531754;
+    border: none;
+    padding: 8px 16px;
+  }
+  
+  .primaryButton:hover {
+    background-color: rgb(255, 255, 255);
+    color: #531754;
+  }
+  
+  .dashedButton {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #1f2937;
+    background-color: rgb(151, 154, 147);
+    border: none;
+    padding: 8px 16px;
+  }
+  
+  .dashedButton:hover {
+    background-color: rgb(6, 7, 5);
+    color: #ffffff;
+  }
+  

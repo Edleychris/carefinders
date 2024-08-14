@@ -1,0 +1,480 @@
+.navigation {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex: 0.13;
+    flex-direction: column;
+    /* padding: 1rem; */
+    border-radius: 0px;
+    background: white;
+    border-right: 1px solid rgba(200, 200, 200, 0.3);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+    overflow-y: auto;
+}
+
+.navigation::-webkit-scrollbar {
+    width: 5px;
+}
+
+.navigation::-webkit-scrollbar-track {
+    background-color: #850075;
+}
+
+.navigation::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px rgba(255, 255, 255, 1);
+}
+
+.userContainer {
+    border-bottom: 1px solid gainsboro;
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    height: 4rem;
+    padding: 1rem;
+    /* justify-content: center; */
+    align-items: center;
+    margin-bottom: 0.7rem;
+    cursor: pointer;
+}
+
+/* .logo img {
+    width: 100%;
+    object-fit: contain;
+    max-height: 4rem;
+} */
+
+.logoImg {
+    width: 33px;
+    height: 33px;
+    border-radius: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logoImg p {
+    font-size: 20px;
+    font-weight: 400;
+    color: #FFFFFF;
+    font-family: open sans;
+}
+
+.icon {
+    margin-left: auto;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    z-index: 1000;
+    width: 100%;
+    border-top: 1px solid gainsboro;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    /* padding: 0.5rem; */
+    /* padding-top: 0rem; */
+}
+
+/* .dropdown ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+} */
+
+.dropdown ul li {
+    padding: 1rem;
+
+    /* border-bottom: 1px solid gainsboro; */
+    cursor: pointer;
+    list-style: none;
+    font-size: 12px;
+    font-weight: 400;
+    color: #808080;
+    margin-bottom: 0.5rem;
+}
+
+.dropdown li:hover {
+    background: #f0f0f0;
+    border-radius: 6px !important;
+    /* padding: 0.5rem; */
+}
+
+li.business {
+    /* display: flex;
+    align-items: center;
+    justify-content: space-between; */
+    /* padding: 1.5rem; */
+    /* margin-top: 0.5rem; */
+
+    /* margin: 0.5rem; */
+    border-bottom: 1px solid gainsboro;
+}
+
+.business span {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #850075;
+    font-size: 12px;
+    font-weight: 400;
+    /* padding: 0.5rem; */
+}
+
+li.business:hover {
+    background: #F5F5F5;
+    border-radius: 6px !important;
+    /* padding: 0.5rem; */
+}
+
+.logout {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.greeting {
+    display: flex;
+    flex: 0.8;
+    flex-direction: column;
+    margin-right: 2rem;
+    margin-left: 0.5rem;
+}
+
+.greeting h3 {
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 0.1rem;
+}
+
+.greeting h3 span {
+    font-size: 20px;
+}
+
+.greeting p {
+    font-size: 11px;
+    color: gray;
+}
+
+.id {
+    display: flex;
+    align-items: center;
+}
+
+.id span {
+    margin-left: 5px;
+}
+
+.search {
+    display: flex;
+    border-radius: 6px;
+    /* background: white; */
+    padding: 0.7rem;
+    align-items: center;
+    background-color: #F5F5F5;
+    margin-bottom: 0.5rem;
+}
+
+.search input {
+    outline: none;
+    border: none;
+    width: 100%;
+    margin-left: 0.5rem;
+    background-color: #F5F5F5;
+}
+
+.child {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    /* background: rgba(40, 167, 69, 1); */
+    color: white;
+}
+
+.child ul li a {
+    color: #808080;
+}
+
+.childContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0.5rem;
+}
+
+.links ul {
+    display: flex;
+    list-style: none;
+    /* justify-content: space-around; */
+    width: 100%;
+    flex-direction: column;
+}
+
+.links ul li {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    justify-content: center;
+    /* height: 3rem; */
+    cursor: pointer;
+    padding: 0.7rem;
+    /* align-items: center; */
+    margin-bottom: 0.5rem;
+}
+
+.links ul li a {
+    display: flex;
+    list-style: none;
+    /* justify-content: space-between; */
+    text-decoration: none;
+    align-items: center;
+    text-decoration: none;
+    color: #808080;
+    font-size: 12px;
+    gap: 0.5rem;
+}
+
+.links ul li span {
+    display: flex;
+    list-style: none;
+    /* justify-content: space-around; */
+    text-decoration: none;
+    align-items: center;
+    text-decoration: none;
+    color: #808080;
+    font-size: 12px;
+    gap: 0.5rem;
+}
+
+/* .links ul li span span {} */
+
+.links ul li a svg {
+    margin-right: 0.5rem;
+}
+
+.links ul li span svg {
+    margin-right: 0.5rem;
+}
+
+.links p {
+    color: white;
+}
+
+.links ul li:hover {
+    background: #F5F5F5 !important;
+    color: #FFFF !important;
+    border-radius: 6px !important;
+}
+
+.links ul li:hover a,
+.links ul li:hover span {
+    /* background: #850075; */
+    color: #808080 !important;
+    /* border-radius: 6px; */
+}
+
+.active,
+.ul li span.active,
+.ul li span a.active {
+    background: #F5F5F5 !important;
+    color: #fff !important;
+    border-radius: 6px !important;
+}
+
+.links ul .active a,
+.links ul .active span {
+    /* color: black; */
+    color: #808080 !important;
+    font-weight: 400;
+}
+
+.links ul .active span {
+    color: black;
+}
+
+/* end of mobile component */
+.mobileNav {
+    display: none;
+    justify-content: space-between;
+    background: #fff;
+    max-height: 5rem;
+    padding: 0.5rem 1rem;
+    align-items: center;
+    color: black;
+}
+
+.bars {
+    font-size: 1.5rem;
+}
+
+.mobileNavigation {
+    display: flex;
+    background: white;
+    flex-direction: column;
+    padding: 0.5rem 1rem;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+/* mobile component */
+
+/* Media Query */
+
+@media screen and (min-width: 1300px) and (max-width: 1600px) {
+    .navigation {
+        display: flex;
+        flex: 0.15;
+    }
+
+    .logo img {
+        /* width: 50%; */
+        object-fit: contain;
+        max-height: 4rem;
+    }
+
+    .mobileNav {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .navigation {
+        display: flex;
+        flex: 0.17;
+    }
+
+    .greeting {
+        margin-right: 0;
+    }
+
+    .logo img {
+        width: 50%;
+        object-fit: contain;
+        max-height: 4rem;
+    }
+
+    .mobileNav {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1050px) and (max-width: 1300px) {
+    .navigation {
+        display: flex;
+        flex: 0.18;
+    }
+
+    .logo img {
+        width: 50%;
+        object-fit: contain;
+        max-height: 4rem;
+    }
+
+    .mobileNav {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .navigation {
+        display: none;
+    }
+
+    .logo img {
+        width: 50%;
+        object-fit: contain;
+        max-height: 4rem;
+    }
+
+    .mobileNav {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .navigation {
+        display: none;
+    }
+
+    .logo img {
+        width: 50%;
+        object-fit: contain;
+        max-height: 4rem;
+    }
+
+    .mobileNav {
+        display: flex;
+    }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1050px) {
+    .navigation {
+        display: none;
+    }
+
+    .logo {
+        padding: 0.5rem;
+    }
+
+    .logo img {
+        width: 50%;
+        object-fit: contain;
+        max-height: 4rem;
+    }
+
+    .mobileNav {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .navigation {
+        display: none;
+    }
+
+    .logo {
+        padding: 0.5rem;
+    }
+
+    .logo img {
+        width: 50%;
+        object-fit: contain;
+        max-height: 4rem;
+    }
+
+    .mobileNav {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .navigation {
+        display: none;
+    }
+
+    .logo {
+        padding: 0.2rem;
+    }
+
+    .logo img {
+        width: 50%;
+        object-fit: contain;
+        max-height: 4rem;
+    }
+
+    .greeting {
+        margin-right: 0.5rem;
+    }
+
+    .mobileNav {
+        display: flex;
+    }
+}
