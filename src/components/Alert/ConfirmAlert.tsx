@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useAlert } from "../../context/AlertContext";
-import smile from "../../assets/error.png";
+import smile from "../../assets/good.jpg";
 import Alert from ".";
 
 type SuccessAlertProps = {

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useAlert } from "../../context/AlertContext";
 import Alert from ".";
-import smile from "../../assets/success.png";
+import smile from "../../assets/good.jpg";
 
 type SuccessAlertProps = {
   autoClose?: boolean;

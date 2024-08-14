@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useAlert } from "../../context/AlertContext";
-import smile from "../../assets/error.png";
+import error from "../../assets/error.webp";
 import Alert from ".";
 
 type ErrorAlertProps = {
@@ -27,7 +27,7 @@ const ErrorAlert: React.FC<ErrorAlertProps> = ({ autoClose = true }) => {
       content={
         <div className="alert">
           <div className="alertImg">
-            <img src={smile} alt="smile emoji" />
+            <img src={error} alt="smile emoji" />
           </div>
           <div className="text">
             <h1>{alerts?.[0].title}</h1>
