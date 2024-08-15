@@ -1,0 +1,126 @@
+/* .topHospitals {
+    padding: 20px;
+  } */
+
+  /* Container for search and filter inputs */
+/* .searchContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 10px;
+  } */
+ .searchFilterWrapper{
+    margin-bottom: 3rem;
+    /* display: flex; */
+    /* gap: 1rem; */
+ } 
+ 
+  .searchInput {
+    flex: 1;
+    padding: 10px 15px;
+    width: 30%;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+  }
+  
+  .searchInput:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  /* Style for the location select dropdown */
+  .locationSelect {
+    flex: 0.5;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+    background-color: #fff;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 15%;
+    margin-left: .5rem;
+  }
+  
+  .locationSelect:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .locationSelect option {
+    padding: 10px;
+    /* margin-bottom: 10px; */
+  }
+  
+  
+  /* .hospitalHeader {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  } */
+  
+  .cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: calc(25% - 20px); /* Adjusted for 4 cards per row */
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+  .cardTitle {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #007bff;
+  }
+  
+  .cardContent {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .cardContent p {
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .cardContent p svg {
+    margin-right: 5px;
+  }
+  
+  .pagination {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .pageLink {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .pageLink:hover {
+    background-color: #0056b3;
+  }
+  

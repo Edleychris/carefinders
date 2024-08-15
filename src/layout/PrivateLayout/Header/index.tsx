@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./styles.module.css";
 import { IoNotificationsCircleOutline } from "react-icons/io5";
 // import Profile from "../../../components/Profile";
@@ -7,8 +7,13 @@ import { IoNotificationsCircleOutline } from "react-icons/io5";
 import { FiPlus } from "react-icons/fi";
 import { MdMenu } from "react-icons/md";
 import Drawer from "../../../components/Drawer";
-import Navigation, { User } from "../Navigation";
+import Navigation from "../Navigation";
+import { User } from "../../../interface";
 import { GoArrowUpRight } from "react-icons/go";
+import { FaSignOutAlt } from "react-icons/fa";
+import { AuthContext } from "../../../context";
+import { useNavigate } from "react-router-dom";
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 
 interface HeaderProps {
   title: string;
@@ -24,6 +29,19 @@ const Header: React.FC<HeaderProps> = ({
   handleDateClick,
 }) => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const authCtx = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const toggleDropdown = () => {
+    setDropdownOpen(!isDropdownOpen);
+  };
+
+  const logout = () => {
+    authCtx.logout();
+    window.location.reload();
+    navigate("/");
+  };
 
   const renderContent = () => {
     switch (pageName) {
@@ -31,8 +49,39 @@ const Header: React.FC<HeaderProps> = ({
         return (
           <div className={styles.overview}>
             <IoNotificationsCircleOutline style={{ fontSize: "24px" }} />
-            {/* <CalendarComponent /> */}
-            {/* <Profile user={user} /> */}
+            <div className={styles.userContainer}>
+              <div className={styles.logo}>
+                <div className={styles.logoImg}>
+                  <p>J</p>
+                </div>
+                <div className={styles.greeting}>
+                  <h3>{user?.firstname}</h3>
+                  <p className={styles.id}>
+                    ID: <span>{user?.id}</span>
+                  </p>
+                </div>
+                <div className={styles.icon} onClick={toggleDropdown}>
+                  {isDropdownOpen ? (
+                    <MdKeyboardArrowUp />
+                  ) : (
+                    <MdKeyboardArrowDown />
+                  )}
+                </div>
+              </div>
+              {isDropdownOpen && (
+                <div className={styles.dropdown}>
+                  <ul>
+                    <li>Settings</li>
+                    <li>
+                      <span onClick={logout} className={styles.logout}>
+                        <FaSignOutAlt />
+                        Logout
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </div>
           </div>
         );
       case "page":

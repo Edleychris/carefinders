@@ -18,7 +18,7 @@ export const BasePaths = {
     DOCTORS: "/app/doctors",
     DEPARTMENTS: "/app/departments",
     EMPLOYEES: "/app/employees",
-    PHARMACY: "/app/pharmacy",
+    HOSPITAL: "/app/hospital",
     ANALYTICS: "/app/analytics",
     INVOICES: "/app/invoices",
     REPORTS: "/app/reports",

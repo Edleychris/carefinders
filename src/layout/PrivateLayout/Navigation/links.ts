@@ -42,8 +42,8 @@ export const userLinks = [
     allowed: ["user"],
   },
   {
-    route: PrivatePaths.PHARMACY,
-    name: "Pharmacy",
+    route: PrivatePaths.HOSPITAL,
+    name: "Hospital",
     // Icon: BiHomeAlt,
     // image: customer,
     allowed: ["user"],

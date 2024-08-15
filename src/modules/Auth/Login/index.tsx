@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // import { Button, FormGroup, PasswordInput } from "../../../components";
-import logo from "../../../assets/logo.svg";
+// import logo from "../../../assets/logo.svg";
 // import Input from "../../../components/Forms/PasswordInput";
 import { Link, useNavigate } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
@@ -22,7 +22,6 @@ const Login = () => {
     [key: string]: string;
   };
 
-  ///
   const isLoading = useIsMutating();
   const [formData, setFormData] = useState<FormDataType>({
     email: "",
@@ -56,7 +55,7 @@ const Login = () => {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <img src={logo} alt="logo" style={{ width: "64px", height: "63px" }} />
+        {/* <img src={logo} alt="logo" style={{ width: "64px", height: "63px" }} /> */}
         {/* <FormGroup
           onSubmit={submitHandler}
           validation={formData}

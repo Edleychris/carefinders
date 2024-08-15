@@ -26,8 +26,8 @@ const privateRoutes = [
     element: lazy(() => import("../modules/Employees")),
   },
   {
-    path: "/pharmacy",
-    element: lazy(() => import("../modules/Pharmacy")),
+    path: "/hospital",
+    element: lazy(() => import("../modules/Hospital")),
   },
   {
     path: "/analytics",

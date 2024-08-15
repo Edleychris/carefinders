@@ -1,5 +1,5 @@
 .pageTitle {
-    padding: 1.47rem;
+    padding: 1rem;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid gainsboro;
@@ -108,6 +108,92 @@
     background: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+}
+
+.userContainer {
+    /* border-bottom: 1px solid gainsboro; */
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    height: 4rem;
+    padding: 1rem;
+    /* justify-content: center; */
+    align-items: center;
+    /* margin-bottom: 0.7rem; */
+    cursor: pointer;
+    gap: 1rem;
+}
+
+/* .logo img {
+    width: 100%;
+    object-fit: contain;
+    max-height: 4rem;
+} */
+
+.logoImg {
+    width: 33px;
+    height: 33px;
+    border-radius: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logoImg p {
+    font-size: 20px;
+    font-weight: 400;
+    color: #FFFFFF;
+    font-family: open sans;
+}
+
+.icon {
+    margin-left: auto;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    z-index: 1000;
+    width: 100%;
+    border-top: 1px solid gainsboro;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    /* padding: 0.5rem; */
+    /* padding-top: 0rem; */
+}
+
+/* .dropdown ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+} */
+
+.dropdown ul li {
+    padding: 1rem;
+
+    /* border-bottom: 1px solid gainsboro; */
+    cursor: pointer;
+    list-style: none;
+    font-size: 12px;
+    font-weight: 400;
+    color: #808080;
+    margin-bottom: 0.5rem;
+}
+
+.dropdown li:hover {
+    background: #f0f0f0;
+    border-radius: 6px !important;
+    /* padding: 0.5rem; */
+}
+
+.logout {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 @media screen and (min-width: 1300px) and (max-width: 1600px) {
