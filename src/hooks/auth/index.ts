@@ -36,6 +36,17 @@ export const signUpWithGoogle = async () => {
     return null;
   }
 };
+export const signUpInWithGoogle = async () => {
+  try {
+    const auth = getAuth();
+    const provider = new GoogleAuthProvider();
+    const result = await signInWithPopup(auth, provider);
+    return result.user;
+  } catch (error) {
+    console.error("Error during Google sign-up:", error);
+    return null;
+  }
+};
 
 export const signUpWithEmail = async (
   email: string,
@@ -104,12 +115,6 @@ export function useLogin() {
   const authCtx = useContext(AuthContext);
   const { showAlert } = useAlert();
   const { mutate, isError, error, isSuccess, reset } = useMutation({
-    // mutationFn: (formData: FormDataType) => userLogin(formData as any),
-    // onSuccess: (data) => {
-    //   setLoginToken(data.token);
-    //   authCtx.authenticate(data.token);
-    //   successAlert("Login Successful");
-    // },
     mutationFn: (formData: FormDataType) => signInWithEmail(formData.email, formData.password),
     onSuccess: (data) => {
       setLoginToken(data?.user.accessToken);
