@@ -1,24 +1,8 @@
 import React, { useContext, useState } from "react";
 import styles from "./styles.module.css";
 import UserLinks from "./UserLinks";
-import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
-import { AiOutlinePlus } from "react-icons/ai";
-import { FaSignOutAlt } from "react-icons/fa";
-import { AuthContext } from "../../../context";
-import { useNavigate } from "react-router-dom";
-
-interface NavigationProps {
-  name: string;
-  role: string;
-  user: User;
-  style?: any;
-}
-
-export interface User {
-  firstname: string;
-  id: number;
-  // roles: Role[];
-}
+import { NavigationProps } from "../../../interface";
+import logo from "../../../assets/logo.jpg";
 
 const Navigation: React.FC<NavigationProps> = ({
   name,
@@ -26,23 +10,12 @@ const Navigation: React.FC<NavigationProps> = ({
   user,
   style = {},
 }) => {
-  const [isDropdownOpen, setDropdownOpen] = useState(false);
-  const authCtx = useContext(AuthContext);
-  const navigate = useNavigate();
-
-  const toggleDropdown = () => {
-    setDropdownOpen(!isDropdownOpen);
-  };
-
-  const logout = () => {
-    authCtx.logout();
-    window.location.reload();
-    navigate("/");
-  };
-
   return (
     <div className={styles.navigation} style={style}>
-      <div className={styles.userContainer}>
+      <div className={styles.logoImgContainer}>
+        <img src={logo} alt="Carefinder's Logo" className={styles.logoImg} />
+      </div>
+      {/* <div className={styles.userContainer}>
         <div className={styles.logo}>
           <div className={styles.logoImg}>
             <p>J</p>
@@ -70,7 +43,7 @@ const Navigation: React.FC<NavigationProps> = ({
             </ul>
           </div>
         )}
-      </div>
+      </div> */}
       <UserLinks name={name} roles={role} />
     </div>
   );

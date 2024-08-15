@@ -28,6 +28,19 @@ export interface ChildProps {
     _id: string;
     fullname?: string;
   }
+
+  export interface NavigationProps {
+    name: string;
+    role: string;
+    user: User;
+    style?: any;
+  }
+  
+  export interface User {
+    firstname: string;
+    id: number;
+    // roles: Role[];
+  }
   
   export interface LoginProps {
     email: string;
@@ -76,5 +89,11 @@ export interface ChildProps {
   export interface UserLinksProps {
     name: string;
     roles: string;
+  }
+
+  export interface HospitalType {
+    name: string;
+    address: string;
+    phone?: string;
   }
   
