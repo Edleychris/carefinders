@@ -13,7 +13,79 @@ import { FormDataType } from "../../modules/Auth/Login";
 // import { CreateFormDataType } from "../../modules/Auth/RegOld/Sindex";
 // import { FormDataType } from "../../modules/Auth/LoginOld/Sindex";
 
+import { auth, googleProvider, facebookProvider } from "../../firebaseConfig";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  // AuthError,
+  UserCredential,
+  getAuth, GoogleAuthProvider
+} from "firebase/auth";
+
 const SERVER_ERROR = "There was an error contacting the server.";
+
+export const signUpWithGoogle = async () => {
+  try {
+    const auth = getAuth();
+    const provider = new GoogleAuthProvider();
+    const result = await signInWithPopup(auth, provider);
+    return result.user;
+  } catch (error) {
+    console.error("Error during Google sign-up:", error);
+    return null;
+  }
+};
+
+export const signUpWithEmail = async (
+  email: string,
+  password: string
+): Promise<UserCredential | null> => {
+  try {
+    const userCredential = await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+    return userCredential;
+  } catch (error) {
+    console.error("Error signing up with email: ", error);
+    return null;
+  }
+};
+
+export const signInWithEmail = async (
+  email: string,
+  password: string
+): Promise<UserCredential | null> => {
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    return userCredential;
+  } catch (error) {
+    console.error("Error signing in with email: ", error);
+    return null;
+  }
+};
+
+export const signInWithGoogle = async (): Promise<UserCredential | null> => {
+  try {
+    const result = await signInWithPopup(auth, googleProvider);
+    return result;
+  } catch (error) {
+    console.error("Error signing in with Google: ", error);
+    return null;
+  }
+};
+
+export const signInWithFacebook = async (): Promise<UserCredential | null> => {
+  try {
+    const result = await signInWithPopup(auth, facebookProvider);
+    return result;
+  } catch (error) {
+    console.error("Error signing in with Facebook: ", error);
+    return null;
+  }
+};
 
 async function userLogin(formData: LoginProps) {
   const data = await axiosInstance({
@@ -32,10 +104,16 @@ export function useLogin() {
   const authCtx = useContext(AuthContext);
   const { showAlert } = useAlert();
   const { mutate, isError, error, isSuccess, reset } = useMutation({
-    mutationFn: (formData: FormDataType) => userLogin(formData as any),
+    // mutationFn: (formData: FormDataType) => userLogin(formData as any),
+    // onSuccess: (data) => {
+    //   setLoginToken(data.token);
+    //   authCtx.authenticate(data.token);
+    //   successAlert("Login Successful");
+    // },
+    mutationFn: (formData: FormDataType) => signInWithEmail(formData.email, formData.password),
     onSuccess: (data) => {
-      setLoginToken(data.token);
-      authCtx.authenticate(data.token);
+      setLoginToken(data?.user.accessToken);
+      authCtx.authenticate(data?.user.accessToken);
       successAlert("Login Successful");
     },
     onError: (error: any) => {
