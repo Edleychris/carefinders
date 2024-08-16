@@ -26,17 +26,15 @@
 .logoImgContainer {
     display: flex;
     align-items: center;
-    /* justify-content: center; */
     font-size: 30px;
     font-weight: 800;
     color: #1677ff;
+    margin-bottom: 30px;
 }
 
 .logoImg {
     width: 8rem;
     height: auto;
-    /* object-fit: contain; */
-    /* margin: 1rem auto; */
     margin-left: 15px;
     margin-top: 30px;
 }
