@@ -4,14 +4,16 @@ import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 import { userLinks } from "./links";
 import { UserLinksProps } from "../../../interface";
+import { useLocation } from 'react-router-dom';
 
 const UserLinks: React.FC<UserLinksProps> = ({ name, roles = "user" }) => {
   const [newItems, setNewItems] = useState<{ [key: number]: boolean }>({});
-  const [search, setSearch] = useState<string>("");
 
   const toggleHandler = (id: number) => {
     setNewItems((prevItems) => ({ ...prevItems, [id]: !prevItems[id] }));
   };
+  const location = useLocation();
+  const currentRoute = location.pathname;
 
   const hasPermission = (allowedRoles: string[], role: string) => {
     return allowedRoles?.includes(role);
@@ -27,7 +29,7 @@ const UserLinks: React.FC<UserLinksProps> = ({ name, roles = "user" }) => {
                 {item.children ? (
                   <div className={styles.childContainer}>
                     <li
-                      className={name === item.name ? styles.active : ""}
+                      className={currentRoute === item.route ? styles.active : ""}
                       onClick={() => toggleHandler(i)}
                     >
                       <span>
@@ -74,7 +76,7 @@ const UserLinks: React.FC<UserLinksProps> = ({ name, roles = "user" }) => {
                   item.route && (
                     <li
                       key={i}
-                      className={name === item.name ? styles.active : ""}
+                      className={currentRoute === item.route ? styles.active : ""}
                     >
                       <Link to={item.route}>
                         {item.image ? (
