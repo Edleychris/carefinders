@@ -2,7 +2,6 @@ import {jwtDecode }from "jwt-decode";
 import { toast } from "react-toastify";
 import { getLoginToken } from "../storage";
 import { IDecodedUser } from "../interface";
-// import { AxiosError } from "axios";
 
 const SERVER_ERROR = "There was an error contacting the server.";
 

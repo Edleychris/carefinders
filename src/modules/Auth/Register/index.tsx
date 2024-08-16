@@ -1,10 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../../../assets/logo.svg";
 import googleIcon from "../../../assets/google_logo.png";
 import facebookIcon from "../../../assets/facebook_icon.png";
-import React, { useState } from "react";
-import { IoIosArrowForward } from "react-icons/io";
-import { BsExclamation } from "react-icons/bs";
+import { useState } from "react";
 import { useIsMutating } from "@tanstack/react-query";
 import { Button, Form, Input } from "antd";
 import {
