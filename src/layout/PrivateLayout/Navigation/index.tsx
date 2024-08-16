@@ -13,7 +13,8 @@ const Navigation: React.FC<NavigationProps> = ({
   return (
     <div className={styles.navigation} style={style}>
       <div className={styles.logoImgContainer}>
-        <img src={logo} alt="Carefinder's Logo" className={styles.logoImg} />
+        {/* <img src={logo} alt="Carefinder's Logo" className={styles.logoImg} /> */}
+        <p className={styles.logoImg}>CareFinder</p>
       </div>
       <UserLinks name={name} roles={role} />
     </div>
