@@ -1,9 +1,6 @@
 import React, { useContext, useState } from "react";
 import styles from "./styles.module.css";
 import { IoNotificationsCircleOutline } from "react-icons/io5";
-// import Profile from "../../../components/Profile";
-// import CalendarComponent from "../../../components/Calendar";
-// import Navigation, { User } from "../../components/Navigation/index";
 import { FiPlus } from "react-icons/fi";
 import { MdMenu } from "react-icons/md";
 import Drawer from "../../../components/Drawer";
@@ -88,7 +85,6 @@ const Header: React.FC<HeaderProps> = ({
         return (
           <div className={styles.page}>
             <IoNotificationsCircleOutline style={{ fontSize: "24px" }} />
-            {/* <Profile user={user} /> */}
           </div>
         );
       case "others":
