@@ -20,10 +20,21 @@ import {
   signInWithPopup,
   // AuthError,
   UserCredential,
-  getAuth, GoogleAuthProvider
+  getAuth, GoogleAuthProvider, sendPasswordResetEmail as firebaseSendPasswordResetEmail
 } from "firebase/auth";
 
 const SERVER_ERROR = "There was an error contacting the server.";
+
+export const sendPasswordResetEmail = async (email: string) => {
+  const auth = getAuth();
+  try {
+    await firebaseSendPasswordResetEmail(auth, email);
+    successAlert("Password reset email sent successfully. Please check your inbox.");
+  } catch (error) {
+    console.error("Error sending password reset email:", error);
+    errorAlert("Failed to send password reset email. Please try again.");
+  }
+};
 
 export const signUpWithGoogle = async () => {
   try {
@@ -119,13 +130,11 @@ export function useLogin() {
     onSuccess: (data) => {
       setLoginToken(data?.user.accessToken);
       authCtx.authenticate(data?.user.accessToken);
-      successAlert("Login Successful");
     },
     onError: (error: any) => {
       const err = error?.response?.data?.error
         ? error?.response?.data?.error
         : SERVER_ERROR;
-      //   toast.error(err, toastOptions);
       showAlert({
         type: "error",
         title: "Ooops",

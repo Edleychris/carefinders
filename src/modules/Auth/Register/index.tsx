@@ -57,7 +57,7 @@ const Register = () => {
     const user = await signUpWithGoogle();
     if (user) {
       navigate(PublicPaths.LOGIN)
-      successAlert("Google sign-in successful, Please check your email for next steps");
+      successAlert("Google sign-in successful,SignIn to continue");
     } else {
       errorAlert("Failed to sign in with Google");
     }
@@ -85,9 +85,6 @@ const Register = () => {
         <div className={styles.title}>
           <h1>Sign Up</h1>
         </div>
-        {/* <div style={{textAlign: 'center', fontSize:'14px'}}>
-          <p>with</p>
-        </div> */}
         <div className={styles.socials}>
           <p onClick={handleGoogleSignUp} style={{ cursor: 'pointer', width: '40px', height: '30px' }}><img src={googleIcon} alt="Google" style={{ width: '100%' }} /></p> <p>--</p>
           <p style={{ cursor: 'pointer', width: '40px', height: '30px' }}><img src={facebookIcon} alt="" style={{ width: '100%' }} /></p>
@@ -135,8 +132,8 @@ const Register = () => {
             </Button>
           </Form.Item>
         </Form>
-        <div className={styles.optional}>
-          <p>Already have an account?</p> <p><Link to={PublicPaths.LOGIN}>
+        <div className={styles.optional} >
+          <p>Already have an account?</p> <p style={{ color: '#1677ff', fontWeight: '600' }}><Link to={PublicPaths.LOGIN}>
             SignIn
           </Link>
           </p>

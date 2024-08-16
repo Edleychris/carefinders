@@ -119,7 +119,7 @@ const Login = () => {
         </Form>
         <div className={styles.optional}>
           <p>Don't have an account?</p>
-          <p>
+          <p style={{color: '#1677ff', fontWeight: '600'}}>
             <Link to={PublicPaths.REGISTER}>
               SignUp
             </Link>
