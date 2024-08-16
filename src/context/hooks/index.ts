@@ -33,11 +33,6 @@ export function useAuthenticatedUser() {
     },
     onError: (error: any) => {
       authCtx.logout();
-      // const err = error?.response?.data?.error
-      //   ? error?.response?.data?.error
-      //   : SERVER_ERROR;
-
-      //errorAlert(err);
     },
   });
   return data;

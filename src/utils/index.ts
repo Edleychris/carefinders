@@ -56,7 +56,6 @@ export const errorAlert = (error: any) => {
         error?.response?.data?.error
       : SERVER_ERROR;
   return err;
-  //   toast.error(err, toastOptions);
 };
 export const infoAlert = (msg: string) => {
   toast.info(msg || "Info Notification !", toastOptions);

@@ -1,11 +1,7 @@
 export const BasePaths = {
     MAIN: "/app",
-    // USER: "/user",
-    // FINANCE: "/app/finance",
-    // MORE: "/app/config",
   };
   export const PublicPaths = {
-    // HOME: "/",
     LOGIN: "/",
     FORGOT_PASSWORD: "/forgot-Password",
     RESET_PASSWORD: "/reset-Password/:id",

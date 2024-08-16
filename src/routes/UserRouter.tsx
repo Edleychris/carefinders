@@ -51,10 +51,6 @@ const privateRoutes = [
   },
 ];
 function User() {
-  const { user } = useContext(AuthContext);
-  // if (!user) {
-  //   return <Navigate to={`${PublicPaths.LOGIN}`} replace />;
-  // }
   return (
     <Routes>
       {privateRoutes.map(({ path, element: Element }) => (

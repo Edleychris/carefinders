@@ -8,7 +8,6 @@ interface PrivateLayoutProps {
   children: React.ReactNode;
   name: string;
   role?: string;
-  // user: User;
   pageTitle: string;
   pageName: string;
   remove?: boolean;
@@ -18,7 +17,6 @@ const PrivateLayout: React.FC<PrivateLayoutProps> = ({
   children,
   name,
   role = "",
-  // user,
   pageTitle,
   pageName,
   remove = false,

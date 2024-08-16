@@ -1,6 +1,6 @@
 import { axiosInstance } from "../../axios-Instance";
 import { toast } from "react-toastify";
-import { successAlert, toastOptions } from "../../utils";
+import { errorAlert, successAlert, toastOptions } from "../../utils";
 import { useContext } from "react";
 import { AuthContext } from "../../context";
 import { setLoginToken } from "../../storage";
@@ -9,9 +9,6 @@ import { LoginProps, RegisterProps } from "../../interface";
 import { useAlert } from "../../context/AlertContext";
 import { CreateFormDataType } from "../../modules/Auth/Register";
 import { FormDataType } from "../../modules/Auth/Login";
-// import { FormDataType } from "../../modules/Auth/Login";
-// import { CreateFormDataType } from "../../modules/Auth/RegOld/Sindex";
-// import { FormDataType } from "../../modules/Auth/LoginOld/Sindex";
 
 import { auth, googleProvider, facebookProvider } from "../../firebaseConfig";
 import {
@@ -43,7 +40,6 @@ export const signUpWithGoogle = async () => {
     const result = await signInWithPopup(auth, provider);
     return result.user;
   } catch (error) {
-    console.error("Error during Google sign-up:", error);
     return null;
   }
 };
@@ -54,7 +50,6 @@ export const signUpInWithGoogle = async () => {
     const result = await signInWithPopup(auth, provider);
     return result.user;
   } catch (error) {
-    console.error("Error during Google sign-up:", error);
     return null;
   }
 };

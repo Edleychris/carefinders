@@ -128,28 +128,6 @@
     margin-bottom: 0.5rem;
 }
 
-/* .links ul li a {
-    display: flex;
-    list-style: none;
-    text-decoration: none;
-    align-items: center;
-    text-decoration: none;
-    color: #808080;
-    font-size: 12px;
-    gap: 0.5rem;
-} */
-
-/* .links ul li span {
-    display: flex;
-    list-style: none;
-    text-decoration: none;
-    align-items: center;
-    text-decoration: none;
-    color: #808080;
-    font-size: 12px;
-    gap: 0.5rem;
-} */
-
 .links ul li a svg {
     margin-right: 0.5rem;
 }
@@ -193,40 +171,6 @@
     color: white !important;
     border-radius: 6px !important;
 }
-
-/* 
-.links ul li.active,
-.links ul li.active a,
-.links ul li.active span {
-    background: #850075 !important;
-    color: white !important;
-    border-radius: 6px !important;
-}
-
-.links ul li.active {
-    background: #850075 !important;
-    color: white !important;
-    border-radius: 6px !important;
-} 
-
-.active,
-.ul li span.active,
-.ul li span a.active {
-    background: green !important;
-    color: #fff !important;
-    border-radius: 6px !important;
-}
-
-.links ul .active a,
-.links ul .active span {
-    color: #808080 !important;
-    font-weight: 400;
-    background-color: #850075;
-}
-
- .links ul li.active span {
-    color: black;
-} */
 
 /* end of mobile component */
 .mobileNav {
