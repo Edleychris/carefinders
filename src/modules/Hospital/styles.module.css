@@ -1,18 +1,5 @@
-/* .topHospitals {
-    padding: 20px;
-  } */
-
-  /* Container for search and filter inputs */
-/* .searchContainer {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    gap: 10px;
-  } */
  .searchFilterWrapper{
     margin-bottom: 3rem;
-    /* display: flex; */
-    /* gap: 1rem; */
  } 
  
   .searchInput {
@@ -31,7 +18,6 @@
     outline: none;
   }
   
-  /* Style for the location select dropdown */
   .locationSelect {
     flex: 0.5;
     padding: 10px 15px;
@@ -55,16 +41,7 @@
   
   .locationSelect option {
     padding: 10px;
-    /* margin-bottom: 10px; */
   }
-  
-  
-  /* .hospitalHeader {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
-  } */
   
   .cardContainer {
     display: flex;
@@ -78,7 +55,7 @@
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: calc(25% - 20px); /* Adjusted for 4 cards per row */
+    width: calc(25% - 20px); 
     box-sizing: border-box;
     text-align: center;
   }

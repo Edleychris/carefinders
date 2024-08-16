@@ -15,35 +15,6 @@ const Navigation: React.FC<NavigationProps> = ({
       <div className={styles.logoImgContainer}>
         <img src={logo} alt="Carefinder's Logo" className={styles.logoImg} />
       </div>
-      {/* <div className={styles.userContainer}>
-        <div className={styles.logo}>
-          <div className={styles.logoImg}>
-            <p>J</p>
-          </div>
-          <div className={styles.greeting}>
-            <h3>{user?.firstname}</h3>
-            <p className={styles.id}>
-              ID: <span>{user?.id}</span>
-            </p>
-          </div>
-          <div className={styles.icon} onClick={toggleDropdown}>
-            {isDropdownOpen ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
-          </div>
-        </div>
-        {isDropdownOpen && (
-          <div className={styles.dropdown}>
-            <ul>
-              <li>Settings</li>
-              <li>
-                <span onClick={logout} className={styles.logout}>
-                  <FaSignOutAlt />
-                  Logout
-                </span>
-              </li>
-            </ul>
-          </div>
-        )}
-      </div> */}
       <UserLinks name={name} roles={role} />
     </div>
   );

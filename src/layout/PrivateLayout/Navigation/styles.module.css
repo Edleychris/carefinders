@@ -4,7 +4,6 @@
     height: 100vh;
     flex: 0.13;
     flex-direction: column;
-    /* padding: 1rem; */
     border-radius: 0px;
     background: white;
     border-right: 1px solid rgba(200, 200, 200, 0.3);
@@ -72,7 +71,6 @@
 .search {
     display: flex;
     border-radius: 6px;
-    /* background: white; */
     padding: 0.7rem;
     align-items: center;
     background-color: #F5F5F5;
@@ -91,7 +89,6 @@
     display: flex;
     flex-direction: column;
     padding: 0 1rem;
-    /* background: rgba(40, 167, 69, 1); */
     color: white;
 }
 
@@ -114,7 +111,6 @@
 .links ul {
     display: flex;
     list-style: none;
-    /* justify-content: space-around; */
     width: 100%;
     flex-direction: column;
 }
@@ -124,17 +120,14 @@
     flex-direction: column;
     list-style: none;
     justify-content: center;
-    /* height: 3rem; */
     cursor: pointer;
     padding: 0.7rem;
-    /* align-items: center; */
     margin-bottom: 0.5rem;
 }
 
 .links ul li a {
     display: flex;
     list-style: none;
-    /* justify-content: space-between; */
     text-decoration: none;
     align-items: center;
     text-decoration: none;
@@ -146,7 +139,6 @@
 .links ul li span {
     display: flex;
     list-style: none;
-    /* justify-content: space-around; */
     text-decoration: none;
     align-items: center;
     text-decoration: none;
@@ -154,8 +146,6 @@
     font-size: 12px;
     gap: 0.5rem;
 }
-
-/* .links ul li span span {} */
 
 .links ul li a svg {
     margin-right: 0.5rem;
@@ -177,54 +167,51 @@
 
 .links ul li:hover a,
 .links ul li:hover span {
-    /* background: #850075; */
     color: white !important;
-    /* border-radius: 6px; */
 }
 
-/* .links ul li:hover a,
-.links ul li:hover span {
-  color: white !important;
-} */
+.links ul li.active a, .active{
+    background: #850075 !important;
+}
 
-.links ul li.active,
+
 .links ul li.active a,
 .links ul li.active span {
   background: #850075 !important;
   color: white !important;
   border-radius: 6px !important;
 }
-
-/* .links ul li.active,
+/* 
+.links ul li.active,
 .links ul li.active a,
 .links ul li.active span {
     background: #850075 !important;
     color: white !important;
     border-radius: 6px !important;
-} */
+}
 
-/* Additional styling for the active state */
-/* .links ul li.active {
+.links ul li.active {
     background: #850075 !important;
     color: white !important;
     border-radius: 6px !important;
-} */
+} 
 
-/* .active,
+.active,
 .ul li span.active,
 .ul li span a.active {
     background: green !important;
     color: #fff !important;
     border-radius: 6px !important;
-} */
+}
 
-/* .links ul .active a,
+.links ul .active a,
 .links ul .active span {
     color: #808080 !important;
     font-weight: 400;
-} */
+    background-color: #850075;
+}
 
-/* .links ul .active span {
+ .links ul li.active span {
     color: black;
 } */
 
@@ -263,7 +250,6 @@
     }
 
     .logo img {
-        /* width: 50%; */
         object-fit: contain;
         max-height: 4rem;
     }
