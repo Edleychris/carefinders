@@ -6,12 +6,8 @@ import { AuthContext } from "../context";
 import { PrivatePaths } from "./path";
 
 const paths = [
-  //   {
-  //     path: "",
-  //     element: lazy(() => import("../modules/Home")),
-  //   },
   {
-    path: "/login",
+    path: "/",
     element: lazy(() => import("../modules/Auth/Login")),
   },
 
@@ -19,19 +15,10 @@ const paths = [
     path: "/create-account",
     element: lazy(() => import("../modules/Auth/Register")),
   },
-  //   {
-  //     path: "/forgot-password",
-  //     element: lazy(() => import("../modules/Auth/ForgotPassword")),
-  //   },
-  //   {
-  //     path: "/reset-password/:id",
-  //     element: lazy(() => import("../modules/Auth/ResetPassword")),
-  //   },
-
-  //   {
-  //     path: "*",
-  //     element: lazy(() => import("../modules/NotFound")),
-  //   },
+  {
+    path: "/forgot-password",
+    element: lazy(() => import("../modules/Auth/ForgotPassword")),
+  },
 ];
 
 function Auth() {

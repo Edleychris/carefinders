@@ -20,12 +20,34 @@ import {
   signInWithPopup,
   // AuthError,
   UserCredential,
-  getAuth, GoogleAuthProvider
+  getAuth, GoogleAuthProvider, sendPasswordResetEmail as firebaseSendPasswordResetEmail
 } from "firebase/auth";
 
 const SERVER_ERROR = "There was an error contacting the server.";
 
+export const sendPasswordResetEmail = async (email: string) => {
+  const auth = getAuth();
+  try {
+    await firebaseSendPasswordResetEmail(auth, email);
+    successAlert("Password reset email sent successfully. Please check your inbox.");
+  } catch (error) {
+    console.error("Error sending password reset email:", error);
+    errorAlert("Failed to send password reset email. Please try again.");
+  }
+};
+
 export const signUpWithGoogle = async () => {
+  try {
+    const auth = getAuth();
+    const provider = new GoogleAuthProvider();
+    const result = await signInWithPopup(auth, provider);
+    return result.user;
+  } catch (error) {
+    console.error("Error during Google sign-up:", error);
+    return null;
+  }
+};
+export const signUpInWithGoogle = async () => {
   try {
     const auth = getAuth();
     const provider = new GoogleAuthProvider();
@@ -104,23 +126,15 @@ export function useLogin() {
   const authCtx = useContext(AuthContext);
   const { showAlert } = useAlert();
   const { mutate, isError, error, isSuccess, reset } = useMutation({
-    // mutationFn: (formData: FormDataType) => userLogin(formData as any),
-    // onSuccess: (data) => {
-    //   setLoginToken(data.token);
-    //   authCtx.authenticate(data.token);
-    //   successAlert("Login Successful");
-    // },
     mutationFn: (formData: FormDataType) => signInWithEmail(formData.email, formData.password),
     onSuccess: (data) => {
       setLoginToken(data?.user.accessToken);
       authCtx.authenticate(data?.user.accessToken);
-      successAlert("Login Successful");
     },
     onError: (error: any) => {
       const err = error?.response?.data?.error
         ? error?.response?.data?.error
         : SERVER_ERROR;
-      //   toast.error(err, toastOptions);
       showAlert({
         type: "error",
         title: "Ooops",

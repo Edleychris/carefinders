@@ -1,5 +1,10 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import logo from "../../../assets/logo.svg";
+import googleIcon from "../../../assets/google_logo.png";
+import facebookIcon from "../../../assets/facebook_icon.png";
+import React, { useState } from "react";
+import { IoIosArrowForward } from "react-icons/io";
+import { BsExclamation } from "react-icons/bs";
 import { useIsMutating } from "@tanstack/react-query";
 import { Button, Form, Input } from "antd";
 import {
@@ -43,12 +48,12 @@ const Register = () => {
       successAlert(
         "Registration Successful, Please check your email for next steps"
       );
-      console.log("Firebase signup successful", user);
       setFormData({ email: "", password: "" });
     } else {
       errorAlert("Failed to sign up with Firebase");
     }
   };
+  const navigate = useNavigate();
 
   const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (
     errorInfo
@@ -59,10 +64,8 @@ const Register = () => {
   const handleGoogleSignUp = async () => {
     const user = await signUpWithGoogle();
     if (user) {
-      successAlert(
-        "Google sign-in successful, Please check your email for next steps"
-      );
-      console.log("Firebase Google sign-in successful", user);
+      navigate(PublicPaths.LOGIN);
+      successAlert("Google sign-in successful,SignIn to continue");
     } else {
       errorAlert("Failed to sign in with Google");
     }
@@ -74,6 +77,7 @@ const Register = () => {
   }
   if (isSuccess) {
     reset();
+    navigate(PublicPaths.LOGIN);
     successAlert(
       "Registration Successful, Please check your email for next steps"
     );
@@ -90,11 +94,25 @@ const Register = () => {
           <h1>Sign Up</h1>
         </div>
         <div className={styles.socials}>
-          <p onClick={handleGoogleSignUp} style={{ cursor: "pointer" }}>
-            GOOGLE
+          <p
+            onClick={handleGoogleSignUp}
+            style={{ cursor: "pointer", width: "40px", height: "30px" }}
+          >
+            <img src={googleIcon} alt="Google" style={{ width: "100%" }} />
           </p>{" "}
-          <p>.</p>
-          <p>FACEBOOK</p>
+          <p>--</p>
+          <p style={{ cursor: "pointer", width: "40px", height: "30px" }}>
+            <img src={facebookIcon} alt="" style={{ width: "100%" }} />
+          </p>
+        </div>
+        <div
+          style={{
+            textAlign: "center",
+            fontSize: "14px",
+            marginBottom: "20px",
+          }}
+        >
+          <p>or</p>
         </div>
         <Form
           name="basic"
@@ -158,7 +176,7 @@ const Register = () => {
         </Form>
         <div className={styles.optional}>
           <p>Already have an account?</p>{" "}
-          <p>
+          <p style={{ color: "#1677ff", fontWeight: "600" }}>
             <Link to={PublicPaths.LOGIN}>SignIn</Link>
           </p>
         </div>

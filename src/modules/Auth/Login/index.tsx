@@ -3,11 +3,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
 import styles from "./index.module.css";
 import { useIsMutating } from "@tanstack/react-query";
-import { useLogin } from "../../../hooks/auth";
-import { successAlert } from "../../../utils";
+import { signInWithGoogle, useLogin } from "../../../hooks/auth";
+import { errorAlert, successAlert } from "../../../utils";
 import { PrivatePaths, PublicPaths } from "../../../routes/path";
 import { Button, Checkbox, Form, Input } from 'antd';
 import type { FormProps } from 'antd';
+import googleIcon from "../../../assets/google_logo.png";
+import facebookIcon from "../../../assets/facebook_icon.png"
 
 type FieldType = {
   email?: string;
@@ -29,12 +31,20 @@ const Login = () => {
   const navigate = useNavigate();
 
   const { mutate, isSuccess, isError, reset } = useLogin();
-  
+
   const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
     setFormData(values);
     mutate(values);
   };
-
+  const handleGoogleSignIn = async () => {
+    const user = await signInWithGoogle();
+    if (user) {
+      successAlert("Google sign-in successful");
+      navigate(PrivatePaths.DASHBOARD);
+    } else {
+      errorAlert("Failed to sign in with Google");
+    }
+  };
   const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (errorInfo) => {
     console.log('Failed:', errorInfo);
   };
@@ -56,11 +66,15 @@ const Login = () => {
         <div className={styles.title}>
           <h1>Login</h1>
         </div>
+        <div className={styles.socials}>
+          <p onClick={handleGoogleSignIn} style={{ cursor: 'pointer', width: '40px', height: '30px' }}><img src={googleIcon} alt="Google" style={{ width: '100%' }} /></p> <p>--</p>
+          <p style={{ cursor: 'pointer', width: '40px', height: '30px' }}><img src={facebookIcon} alt="" style={{ width: '100%' }} /></p>
+        </div>
         <Form
           name="basic"
           labelCol={{ span: 8 }}
           wrapperCol={{ span: 16 }}
-          style={{ maxWidth: 600, display: 'flex', flexDirection: 'column', alignItems:'right' }}
+          style={{ maxWidth: 600, display: 'flex', flexDirection: 'column', alignItems: 'right' }}
           initialValues={{ remember: true }}
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}
@@ -97,15 +111,15 @@ const Login = () => {
             </Form.Item>
           </div>
 
-          <Form.Item wrapperCol={{ offset: 8, span: 16 }} style={{display: 'flex', width: '100%', justifyContent: 'center'}}>
-            <Button type="primary" htmlType="submit" style={{width: '100%', justifyContent: 'center'}}>
+          <Form.Item wrapperCol={{ offset: 8, span: 16 }} style={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
+            <Button type="primary" htmlType="submit" style={{ width: '100%', justifyContent: 'center' }}>
               Submit
             </Button>
           </Form.Item>
         </Form>
         <div className={styles.optional}>
           <p>Don't have an account?</p>
-          <p>
+          <p style={{color: '#1677ff', fontWeight: '600'}}>
             <Link to={PublicPaths.REGISTER}>
               SignUp
             </Link>

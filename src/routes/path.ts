@@ -5,8 +5,8 @@ export const BasePaths = {
     // MORE: "/app/config",
   };
   export const PublicPaths = {
-    HOME: "/",
-    LOGIN: "/login",
+    // HOME: "/",
+    LOGIN: "/",
     FORGOT_PASSWORD: "/forgot-Password",
     RESET_PASSWORD: "/reset-Password/:id",
     REGISTER: "/create-account",
